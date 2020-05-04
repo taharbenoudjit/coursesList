@@ -2,7 +2,22 @@ let express = require('express'),
    path = require('path'),
    cors = require('cors'),
    bodyParser = require('body-parser'),
+   mongoose = require('mongoose'),
+   dbConfig = require('./database/db');
 
+
+//Connect to database
+mongoose.Promise = global.Promise;
+mongoose.connect(dbConfig.db,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() =>{
+    console.log('Database is connected')
+},
+error => {
+    console.log('Database Not connected:' + error)
+}
+)
 
 
 // Set port 
