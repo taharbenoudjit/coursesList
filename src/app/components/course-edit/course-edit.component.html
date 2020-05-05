@@ -1,1 +1,50 @@
-<p>course-edit works!</p>
+<div class="row justify-content-center">
+    <div class="col-md-4 register-course">
+      <!-- form card  -->
+      <div class="card card-outline-secondary">
+        <div class="card-header">
+          <h3 class="mb-0">Modifier mon produit</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+ 
+            <div class="form-group">
+              <label for="inputName">Mon Profuit*</label>
+              <input class="form-control" type="text" formControlName="name">
+              <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3">Commentaire*</label>
+              <input class="form-control" type="text" formControlName="comment">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.comment.errors?.required">
+                Enter your comment.
+              </div>
+              
+            </div>
+ 
+            <div class="form-group">
+              <label for="inputPassword3">Importance</label>
+              <select class="custom-select form-control" (change)="updateImportance($event.target.value)" formControlName="importance">
+                <option value="">Choisir...</option>
+                <option *ngFor="let courseImportance of CourseImportance" value="{{courseImportance}}">{{courseImportance}}
+                </option>
+              </select>
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.importance.errors?.required">
+                Choose impotance.
+              </div>
+            </div>
+ 
+            <div class="form-group">
+              <button class="btn btn-success btn-lg btn-block" type="submit">Modifier</button>
+            </div>
+          </form>
+        </div>
+      </div><!-- form  -->
+    </div>
+  </div>
+ 
+            
