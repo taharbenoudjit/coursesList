@@ -21,7 +21,7 @@ This page is almost like the main page or the create a product page, but with a 
 
 
 ## Global 
-Every action on the data is directly connected to the database by applying Creat, Read , Update , Delete, all routes are sets by a RESTFul API
+Every action on the data is directly connected to the database by applying Creat (create new product), Read (recover data from database) , Update (modifying product) , Delete (Delete product), all routes are sets by a RESTFul API
 
 ## Image examples are in the folder /examples  
 
