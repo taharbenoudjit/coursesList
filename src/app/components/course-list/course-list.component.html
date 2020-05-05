@@ -1,1 +1,22 @@
-<p>course-list works!</p>
+<div class="container">
+    <!-- No data message -->
+    <p *ngIf="Course.length <= 0" class="no-data text-center">Votre liste des courses est vide, merci de la remplir</p>
+  
+    <!-- Employee list -->
+    
+        <div class= "row">
+            <div class = "card shadow-sm  m-3" style = "width: 18rem;" *ngFor="let course of Course; let i = index"  > 
+                <div class = "card-body">
+                    <h5 class = "card-title">{{ course.name }}</h5>
+                    <h6 class = "card-subtitle mb-2 text-muted">{{ course.importance }}</h6>
+                    <p class = "card-text">{{ course.comment }}</p>
+                    <span class="edit" [routerLink]="['/edit-course/', course._id]">
+                        <button type="button" class="btn btn-success btn-sm mr-2">Modifier</button>
+                      </span>
+                      <span class="delete" (click)="removeCourse(course,i)">
+                        <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
+                      </span> 
+                </div>    
+            </div>
+        </div>
+    </div>

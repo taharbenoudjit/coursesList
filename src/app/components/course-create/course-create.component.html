@@ -13,27 +13,25 @@
           </div>
   
           <div class="form-group">
-            <label for="inputComment">Commentaire*</label>
+            <label for="inputVerify3">Commentaire*</label>
             <input class="form-control" type="text" formControlName="comment">
             <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
+            <div class="invalid-feedback" *ngIf="submitted && myForm.comment.errors?.required">
               Enter your comment.
             </div>
-            <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
-              Enter a comment.
-            </div>
-          </div>
+           </div>
+          
   
           <div class="form-group">
             <label for="inputPassword3">Importance*</label>
-            <select class="custom-select form-control" (change)="CourseImportance($event.target.value)"
+            <select class="custom-select form-control" (change)="ChooseImportance($event.target.value)"
               formControlName="importance">
               <option value="">Choisir...</option>
               <option *ngFor="let courseImportance of CourseImportance" value="{{courseImportance}}">{{courseImportance}}
               </option>
             </select>
             <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.designation.errors?.required">
+            <div class="invalid-feedback" *ngIf="submitted && myForm.importance.errors?.required">
               Choose importance.
             </div>
           </div>

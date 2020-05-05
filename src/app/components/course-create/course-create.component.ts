@@ -29,7 +29,7 @@ export class CourseCreateComponent implements OnInit {
   mainForm() {
     this.courseForm = this.fb.group({
       name: ['', [Validators.required]],
-      comment: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      comment: ['', [Validators.required]],
       importance: ['', [Validators.required]],
       
     })
@@ -37,7 +37,7 @@ export class CourseCreateComponent implements OnInit {
 
   //choose importance
   ChooseImportance(e){
-    this.courseForm.get('designation').setValue(e, {
+    this.courseForm.get('importance').setValue(e, {
       onlySelf: true
     })
   }
