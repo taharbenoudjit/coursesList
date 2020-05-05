@@ -13,17 +13,17 @@ In the navBar on the right to buttons to switch between the list view and the ma
 
 Ps: the star '*' means that the field should be field or the validation will faill
 
-##List page 
+## List page 
 In this page we can find the products that we have added already or the once that exists in the database, it display in cards, in every card in the top there the product name, just under the importance of the product, next line the comment, in the bottom of every one of them we find two bottons in the right "modifier" that swith us the modifying page, the left one is to delete the product from the list and before that it makes a call for an alert to confirm the delete.
 
-##Modifying page
+## Modifying page
 This page is almost like the main page or the create a product page, but with a defferent fonctionalitty, first it fetch the existend data of the selected product, and give us the right to modify every one them.
 
 
-##Global 
-Every action on the data is directly connected to the database by applying Creat, Read , Update , Delete 
+## Global 
+Every action on the data is directly connected to the database by applying Creat, Read , Update , Delete, all routes are sets by a RESTFul API
 
-
+## Image examples are in the folder /examples  
 
 
 
