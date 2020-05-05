@@ -8,11 +8,11 @@ let Course = new Schema({
         type: String
     },
 
-    Comment:{
+    comment: {
         type: String
     },
 
-    importance:{
+    importance: {
         type: String
     },
 
