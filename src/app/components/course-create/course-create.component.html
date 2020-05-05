@@ -1,1 +1,50 @@
-<p>course-create works!</p>
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+      <!-- form card register -->
+      <div class="card-body">
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="inputName">Mon produit*</label>
+            <input class="form-control" type="text" formControlName="name">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+              Name is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="inputComment">Commentaire*</label>
+            <input class="form-control" type="text" formControlName="comment">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
+              Enter your comment.
+            </div>
+            <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
+              Enter a comment.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="inputPassword3">Importance*</label>
+            <select class="custom-select form-control" (change)="CourseImportance($event.target.value)"
+              formControlName="importance">
+              <option value="">Choisir...</option>
+              <option *ngFor="let courseImportance of CourseImportance" value="{{courseImportance}}">{{courseImportance}}
+              </option>
+            </select>
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && myForm.designation.errors?.required">
+              Choose importance.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" type="submit">Ajouter</button>
+          </div>
+        </form>
+  
+      </div>
+    </div><!-- form card register -->
+  </div>
+  
+          
